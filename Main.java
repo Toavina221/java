@@ -1,26 +1,17 @@
-public class Main{
-    public static void main(String[] args){
-        Ecole Polytech = new Ecole("Ecole Polytech" ,  "12 rue de Paris");
-        Etudiant etudiant1 = new Etudiant("Toavina" , "rova" , 1);
-        Etudiant etudiant2 = new Etudiant("Rova" , "rova" , 2);
-        Etudiant etudiant3 = new Etudiant("fano" , "Toavina" , 3);
-        Etudiant etudiant4 = new Etudiant("fanilo" , "ravo" , 4);
+public class Main {
+    public static void main(String[] args) {
 
-        Cours Math = new Cours("Mathématiques" , "Mr jonnah");
-        Cours PC = new Cours("Physique" , "Mr Rinah");
+        Joueur joueurs = new Joueur();
+        joueurs.ajouterJoueur("Rova" , 100);
+        joueurs.ajouterJoueur("Toavina" , 200);
+        joueurs.ajouterJoueur("Ravo" , 300);
+        joueurs.ajouterJoueur("Rivo" , 400);
+        joueurs.afficherScores();
+        joueurs.meilleurJoueur();
 
-        Math.ajouterEtudiant( etudiant1);
-        Math.ajouterEtudiant( etudiant2);
-        PC.ajouterEtudiant( etudiant1);
-        PC.ajouterEtudiant( etudiant2);
-        PC.ajouterEtudiant( etudiant3);
-        PC.ajouterEtudiant( etudiant4);
+        joueurs.modifierScore("Rova", 1000);
 
-        Polytech.ajouterCours( Math);
-        Polytech.ajouterCours( PC);
-
-        Polytech.affichercours();
-        Math.afficherEtudiant();
-        PC.afficherEtudiant();
+        joueurs.afficherScores();
+        joueurs.meilleurJoueur();
     }
 }
