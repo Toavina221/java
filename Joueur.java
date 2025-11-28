@@ -1,6 +1,9 @@
+import java.util.ArrayList ;
 import java.util.HashMap ;
+import java.util.List;
 import java.util.Map;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Joueur{
     //Encapsulation 
@@ -46,5 +49,48 @@ public class Joueur{
         System.out.println("Meilleur Score : " + meilleurScore);
         String meilleurJoueur =Collections.max(joueurs.entrySet(),Map.Entry.comparingByValue()).getKey();
         System.out.println("Meilleur Joueur : " + meilleurJoueur ) ;
+    }
+
+    //trier par ordre croissant
+    public void trierParOrdreCroissant(){
+        List<Map.Entry<String ,Integer>> liste = new ArrayList<>(joueurs.entrySet());
+        Collections.sort(liste, Map.Entry.comparingByValue());
+        System.out.println("Liste par ordre croissant");
+        for (Map.Entry<String,Integer> entry : liste){
+            System.out.println("joueur : " + entry.getKey() + "score : "+ entry.getValue());
+        }
+    }
+
+    public void trierParOrderDecroissant(){
+        List<Map.Entry<String,Integer>> liste = new ArrayList<>(joueurs.entrySet());
+        Collections.sort(liste,Map.Entry.comparingByValue(Comparator.reverseOrder()) );
+        System.out.println("liste par ordre décroissante");
+        for(Map.Entry<String,Integer> entry : liste){
+            System.out.println("joueur : " + entry.getKey() + "score  :" + entry.getValue());
+        }
+    }
+
+    public void moyenneScores(){
+        if(joueurs.isEmpty()){
+            System.err.println("Erreur , la liste est vide !");
+        }
+        else{
+            Integer somme = 0 ;  
+            for(Map.Entry<String , Integer> entry : joueurs.entrySet()){
+                somme += entry.getValue();
+            }
+            double moyenne = somme.doubleValue()/joueurs.entrySet().size();
+            System.out.println("La moyenne de tout les scores est de : "  + moyenne);
+        }
+    }
+    
+    public void plusFaiblejoueur(){
+        if(joueurs.isEmpty()){
+            System.err.println("Erreur , la liste est vide !");
+        }
+        else{
+            Map.Entry<String , Integer> score = Collections.min(joueurs.entrySet(),Map.Entry.comparingByValue());
+            System.out.println("Le score le plus faible est de : " + score.getValue() + "et le joueur le plus faible est " + score.getKey());
+        }
     }
 }

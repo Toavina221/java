@@ -1,17 +1,12 @@
 public class Main {
     public static void main(String[] args) {
+        VilleStats villeStats = new VilleStats();
 
-        Joueur joueurs = new Joueur();
-        joueurs.ajouterJoueur("Rova" , 100);
-        joueurs.ajouterJoueur("Toavina" , 200);
-        joueurs.ajouterJoueur("Ravo" , 300);
-        joueurs.ajouterJoueur("Rivo" , 400);
-        joueurs.afficherScores();
-        joueurs.meilleurJoueur();
+        villeStats.ajouterVille("Paris", 2200000);
+        villeStats.ajouterVille("Tokyo", 13900000);
+        villeStats.ajouterVille("Antananarivo", 1500000);
+        villeStats.ajouterVille("New York", 8500000);
 
-        joueurs.modifierScore("Rova", 1000);
-
-        joueurs.afficherScores();
-        joueurs.meilleurJoueur();
+        villeStats.afficherVille();
     }
 }
