@@ -51,7 +51,7 @@ public class GestionNotes{
                 System.out.println( nom + " a obtenu une moyenne de : " + moyenne) ;
                 return moyenne ;
             }
-        }
+        }  
         else{
             System.err.println("Erreur , l'éleve n'est pas dans la liste");
             return 0;
