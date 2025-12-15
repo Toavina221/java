@@ -21,14 +21,14 @@ public class Livre{
 
 
     //Méthodes
-    public void toString(){
-        System.out.println("Information sur le livre :")
-        System.out.println("-"*50);
+    public void toiString(){
+        System.out.println("Information sur le livre :");
+        System.out.println("------------------------");
         System.out.println("\n\t Livre : " + titre);
         System.out.println("\n\t Auteur : " + auteur);
         System.out.println("\n\t Annee de publication : " + anneePublication);
         System.out.println("\n\t isbn :" +  isbn);
     }
 
-    
+
 }
