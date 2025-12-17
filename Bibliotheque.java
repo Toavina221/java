@@ -21,5 +21,35 @@ public class Bibliotheque {
         }
     }
 
+    //Rechercher un livre par ISBN
+    public void rechercherParIsbn(String isbn){
+        if(listesLivre.isEmpty()){
+            System.err.println("Erreur , la bibliotheque est vide.");
+        }
+        else{
+            if(listesLivre.containsKey(isbn)){
+               listesLivre.get(isbn).toStringLivre();
+            }
+        }
+    }
+
+    //Rechercher des livres par auteur
+    public void rechercherParAuteur(String auteur){
+        if (listesLivre.isEmpty()) {
+            System.err.println("Erreur , la bibliothèque est vide. ");
+        }
+        else{
+            for(String isbn : listesLivre.keySet()){
+                for(Livre livre : listesLivre.values()){
+                    if (livre.getAuteur()==auteur) {
+                        livre.toStringLivre();
+                    }
+                }
+            }
+        }
+    }
+
+
+
     
 }

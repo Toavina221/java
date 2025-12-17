@@ -21,7 +21,7 @@ public class Livre{
 
 
     //Méthodes
-    public void toiString(){
+    public void toStringLivre(){
         System.out.println("Information sur le livre :");
         System.out.println("------------------------");
         System.out.println("\n\t Livre : " + titre);
